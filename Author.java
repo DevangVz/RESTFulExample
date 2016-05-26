@@ -10,16 +10,16 @@ public class Author {
 	private String nationality;
 	
 	
-	public int getID() {
-		return ID;
+	public Integer getID() {
+		return this.ID;
 	}
 	public void setID(int iD) {
-		ID = iD;
+		this.ID = iD;
 	}
-	public String getaName() {
+	public String getAName() {
 		return aName;
 	}
-	public void setaName(String aName) {
+	public void setAName(String aName) {
 		this.aName = aName;
 	}
 	public String getLastName() {

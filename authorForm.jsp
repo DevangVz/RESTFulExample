@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="s"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page import="org.biblioteca.model.*" %>
+<jsp:useBean id="author" class="org.biblioteca.model.Author" scope="session"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -10,16 +12,19 @@
 	</head>
 	<body>
 		<h1>Registra Autor</h1>
-		<s:form method="post" action="save">
-			<label for="aName">Name</label>
-			<s:input type="text"  path="aName" /> </br>
-			<label for="">Last Name</label>
-			<s:input type="text" path="lastname"/> </br>
-			<label for="">Date Of Birth</label>
-			<s:input type="date"  path="DOB"/> </br>
-			<label for="">Nationality</label>
-			<s:input type="text"  path="nationality" /> </br>	
+		
+		<form:form method="post" action="../save" >
+			Valor es igual= ${author.ID}
+			<form:input type="hidden"  path="ID"   /> 
+			<form:label path="aName">Name</form:label>
+			<form:input type="text"  path="aName" /> </br>
+			<form:label path="lastName">Last Name</form:label>
+			<form:input type="text" path="lastName"/> </br>
+			<form:label path="DOB">Date Of Birth</form:label>
+			<form:input type="date"  path="DOB"/> </br>
+			<form:label path="nationality">Nationality</form:label>
+			<form:input type="text"  path="nationality" /> </br>	
 			<input type="submit" value="Save" />
-		</s:form>	
+		</form:form>	
 	</body>
 </html>
